@@ -27,12 +27,12 @@ public class TwoActivity extends BasePActivity<TwoPresenter, ActivityTwoBinding>
     }
 
     @Override
-    public void loadingDataApiSuccess(UserEntity userEntity) {
+    public void findApiSuccess(UserEntity userEntity) {
         vb.tvTest.setText("Success! ->" + userEntity.toString());
     }
 
     @Override
-    public void loadingDataApiFailed(int statusCode) {
+    public void findApiFailed(int statusCode) {
         vb.tvTest.setText("Failed!");
     }
 }

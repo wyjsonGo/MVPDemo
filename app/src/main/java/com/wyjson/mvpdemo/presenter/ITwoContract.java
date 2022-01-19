@@ -11,9 +11,9 @@ import com.wyjson.mvpdemo.entity.UserEntity;
 public interface ITwoContract extends IBaseContract {
 
     interface IView extends IBaseView {
-        void loadingDataApiSuccess(UserEntity userEntity);
+        void findApiSuccess(UserEntity userEntity);
 
-        void loadingDataApiFailed(int statusCode);
+        void findApiFailed(int statusCode);
     }
 
     interface IPresenter<T> extends IBasePresenter<T> {

@@ -16,7 +16,7 @@ public class TwoPresenter extends BasePresenter<ITwoContract.IView> implements I
         new OkHttpUtils().enqueue(2, lifecycleOwner, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
-                mView.loadingDataApiSuccess(new UserEntity(1, "Wyjson Two 1"));
+                mView.findApiSuccess(new UserEntity(1, "Wyjson Two 1"));
             }
         });
     }
@@ -26,7 +26,7 @@ public class TwoPresenter extends BasePresenter<ITwoContract.IView> implements I
         new OkHttpUtils().enqueue(5, lifecycleOwner, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
-                mView.loadingDataApiSuccess(new UserEntity(2, "Wyjson Two 2"));
+                mView.findApiSuccess(new UserEntity(2, "Wyjson Two 2"));
             }
         });
     }
