@@ -15,15 +15,17 @@ public class MainPresenter extends BasePresenter<IMainContract.IView> implements
 
     @Override
     public void loadingDataApi(int page) {
-        mView.showLoading();
-        new OkHttpUtils().enqueue(1, lifecycleOwner, new OkHttpUtils.MyCallback() {
+        getView().showLoading();
+        new OkHttpUtils().enqueue(1, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
-                mView.hideLoading();
+                if (getView() == null)
+                    return;
+                getView().hideLoading();
                 if (new Random().nextBoolean()) {
-                    mView.loadingDataApiSuccess(new UserEntity(25, "Wyjson"));
+                    getView().loadingDataApiSuccess(new UserEntity(25, "Wyjson"));
                 } else {
-                    mView.loadingDataApiFailed(500);
+                    getView().loadingDataApiFailed(500);
                 }
 
             }

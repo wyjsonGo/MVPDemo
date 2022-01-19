@@ -25,14 +25,16 @@ public abstract class BasePActivity<P extends BasePresenter, VB extends ViewBind
         super.onCreate(savedInstanceState);
         mPresenter = setPresenter();
         if (mPresenter != null) {
-            mPresenter.attach(this, this);
+            mPresenter.onAttach(this);
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mPresenter != null)
-            mPresenter.detach();
+        if (mPresenter != null) {
+            mPresenter.onDetach();
+            mPresenter = null;
+        }
     }
 }

@@ -1,7 +1,5 @@
 package com.wyjson.mvpdemo.presenter;
 
-import androidx.lifecycle.LifecycleOwner;
-
 /**
  * @author Wyjson
  * @version 1
@@ -10,9 +8,11 @@ import androidx.lifecycle.LifecycleOwner;
 public interface IBaseContract {
 
     interface IBasePresenter<T> {
-        void attach(LifecycleOwner lifecycleOwner, T view);
+        void onAttach(T view);
 
-        void detach();
+        void onDetach();
+
+        T getView();
     }
 
     interface IBaseView {
