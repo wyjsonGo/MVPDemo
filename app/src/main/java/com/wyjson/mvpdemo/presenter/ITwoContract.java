@@ -10,15 +10,15 @@ import com.wyjson.mvpdemo.entity.UserEntity;
  */
 public interface ITwoContract extends IBaseContract {
 
-    interface IView extends IBaseView {
-        void findApiSuccess(UserEntity userEntity);
-
-        void findApiFailed(int statusCode);
-    }
-
     interface IPresenter<T> extends IBasePresenter<T> {
         void findApi1(int page);
 
         void findApi2(int page);
+    }
+
+    interface IView extends IBaseView {
+        void findApiSuccess(UserEntity userEntity);
+
+        void findApiFailed(int statusCode);
     }
 }

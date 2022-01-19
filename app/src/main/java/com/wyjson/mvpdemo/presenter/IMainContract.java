@@ -10,13 +10,13 @@ import com.wyjson.mvpdemo.entity.UserEntity;
  */
 public interface IMainContract extends IBaseContract {
 
+    interface IPresenter<T> extends IBasePresenter<T> {
+        void loadingDataApi(int page);
+    }
+
     interface IView extends IBaseView {
         void loadingDataApiSuccess(UserEntity userEntity);
 
         void loadingDataApiFailed(int statusCode);
-    }
-
-    interface IPresenter<T> extends IBasePresenter<T> {
-        void loadingDataApi(int page);
     }
 }
