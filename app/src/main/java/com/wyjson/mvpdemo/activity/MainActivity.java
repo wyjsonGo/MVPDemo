@@ -1,5 +1,6 @@
 package com.wyjson.mvpdemo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -31,7 +32,9 @@ public class MainActivity extends BasePActivity<MainPresenter, ActivityMainBindi
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_test) {
-            mPresenter.loadingDataApi(this, 1);
+            mPresenter.loadingDataApi(1);
+        } else if (v.getId() == R.id.btn_open) {
+            startActivity(new Intent(this, TwoActivity.class));
         }
     }
 

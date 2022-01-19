@@ -26,14 +26,14 @@ public abstract class BasePDialogFragment<P extends BasePresenter, VB extends Vi
         super.onViewCreated(view, savedInstanceState);
         mPresenter = setPresenter();
         if (mPresenter != null)
-            mPresenter.attachView(this);
+            mPresenter.attach(this, this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         if (mPresenter != null)
-            mPresenter.detachView();
+            mPresenter.detach();
     }
 }
 
