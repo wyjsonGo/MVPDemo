@@ -13,11 +13,9 @@ public class TwoPresenter extends BasePresenter<ITwoContract.IView> implements I
 
     @Override
     public void findApi1(int page) {
-        new OkHttpUtils().enqueue(2, new OkHttpUtils.MyCallback() {
+        new OkHttpUtils().enqueue(lifecycleOwner, 2, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
-                if (getView() == null)
-                    return;
                 getView().findApiSuccess(new UserEntity(1, "Wyjson Two 1"));
             }
         });
@@ -25,11 +23,9 @@ public class TwoPresenter extends BasePresenter<ITwoContract.IView> implements I
 
     @Override
     public void findApi2(int page) {
-        new OkHttpUtils().enqueue(4, new OkHttpUtils.MyCallback() {
+        new OkHttpUtils().enqueue(lifecycleOwner, 4, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
-                if (getView() == null)
-                    return;
                 getView().findApiSuccess(new UserEntity(2, "Wyjson Two 2"));
             }
         });

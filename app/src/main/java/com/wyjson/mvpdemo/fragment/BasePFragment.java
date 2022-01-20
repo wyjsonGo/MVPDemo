@@ -25,7 +25,7 @@ public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBind
         super.onViewCreated(view, savedInstanceState);
         mPresenter = getPresenter();
         if (mPresenter != null)
-            mPresenter.onAttach(this);
+            mPresenter.onAttach(this, this);
     }
 
     @Override

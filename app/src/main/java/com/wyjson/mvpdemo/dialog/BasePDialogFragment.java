@@ -26,7 +26,7 @@ public abstract class BasePDialogFragment<P extends BasePresenter, VB extends Vi
         super.onViewCreated(view, savedInstanceState);
         mPresenter = setPresenter();
         if (mPresenter != null)
-            mPresenter.onAttach(this);
+            mPresenter.onAttach(this, this);
     }
 
     @Override
