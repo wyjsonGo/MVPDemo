@@ -19,7 +19,6 @@ public class BasePresenter<T extends IBaseContract.IBaseView> implements IBaseCo
 
     @Override
     public void onDetach() {
-        lifecycleOwner.getLifecycle().removeObserver(null);
         lifecycleOwner = null;
         if (weakReference != null && weakReference.get() != null) {
             weakReference.clear();
