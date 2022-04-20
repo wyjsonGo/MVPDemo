@@ -1,4 +1,4 @@
-package com.wyjson.mvpdemo.dialog;
+package com.wyjson.mvpdemo.base.dialog;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.presenter.impl.BasePresenter;
+import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 
 
 /**

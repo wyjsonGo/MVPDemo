@@ -1,4 +1,4 @@
-package com.wyjson.mvpdemo.fragment;
+package com.wyjson.mvpdemo.base.dialog;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.presenter.IBaseContract;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 
 /**
  * @author Wyjson
  * @version 1
- * @date 2021/9/22 4:28 PM
+ * @date 2021/9/22 11:53 AM
  */
-public abstract class BaseFragment<VB extends ViewBinding> extends Fragment implements IBaseContract.IBaseView {
+public abstract class BaseDialogFragment<VB extends ViewBinding> extends DialogFragment implements IBaseContract.IBaseView {
 
     protected VB vb;
 

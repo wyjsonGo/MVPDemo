@@ -1,5 +1,6 @@
-package com.wyjson.mvpdemo.presenter;
+package com.wyjson.mvpdemo.main.presenter;
 
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.entity.UserEntity;
 
 

@@ -1,8 +1,8 @@
-package com.wyjson.mvpdemo.presenter.impl;
+package com.wyjson.mvpdemo.base.presenter;
 
 import androidx.lifecycle.LifecycleOwner;
 
-import com.wyjson.mvpdemo.presenter.IBaseContract;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 
 import java.lang.ref.WeakReference;
 

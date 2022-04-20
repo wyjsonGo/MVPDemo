@@ -1,11 +1,11 @@
-package com.wyjson.mvpdemo.activity;
+package com.wyjson.mvpdemo.base.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.presenter.impl.BasePresenter;
+import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 
 /**
  * Presenter

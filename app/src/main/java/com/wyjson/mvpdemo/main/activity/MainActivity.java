@@ -1,15 +1,17 @@
-package com.wyjson.mvpdemo.activity;
+package com.wyjson.mvpdemo.main.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.wyjson.mvpdemo.R;
+import com.wyjson.mvpdemo.two.activity.TwoActivity;
+import com.wyjson.mvpdemo.base.activity.BasePActivity;
 import com.wyjson.mvpdemo.databinding.ActivityMainBinding;
 import com.wyjson.mvpdemo.entity.UserEntity;
 import com.wyjson.mvpdemo.lifecycle.MyLifecycleObserver;
-import com.wyjson.mvpdemo.presenter.IMainContract;
-import com.wyjson.mvpdemo.presenter.impl.MainPresenter;
+import com.wyjson.mvpdemo.main.presenter.IMainContract;
+import com.wyjson.mvpdemo.main.presenter.MainPresenter;
 
 public class MainActivity extends BasePActivity<MainPresenter, ActivityMainBinding> implements View.OnClickListener, IMainContract.IView {
 

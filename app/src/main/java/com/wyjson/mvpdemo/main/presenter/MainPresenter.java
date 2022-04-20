@@ -1,7 +1,7 @@
-package com.wyjson.mvpdemo.presenter.impl;
+package com.wyjson.mvpdemo.main.presenter;
 
+import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.entity.UserEntity;
-import com.wyjson.mvpdemo.presenter.IMainContract;
 import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
 import java.util.Random;

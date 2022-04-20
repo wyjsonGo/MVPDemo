@@ -1,4 +1,4 @@
-package com.wyjson.mvpdemo.presenter;
+package com.wyjson.mvpdemo.base.presenter;
 
 import androidx.lifecycle.LifecycleOwner;
 

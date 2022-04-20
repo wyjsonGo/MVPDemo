@@ -1,4 +1,4 @@
-package com.wyjson.mvpdemo.activity;
+package com.wyjson.mvpdemo.base.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.presenter.IBaseContract;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 
 /**
  * @author Wyjson

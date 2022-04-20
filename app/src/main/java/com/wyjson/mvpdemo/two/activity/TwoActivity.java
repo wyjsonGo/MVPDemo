@@ -1,11 +1,12 @@
-package com.wyjson.mvpdemo.activity;
+package com.wyjson.mvpdemo.two.activity;
 
 import android.os.Bundle;
 
+import com.wyjson.mvpdemo.base.activity.BasePActivity;
 import com.wyjson.mvpdemo.databinding.ActivityTwoBinding;
 import com.wyjson.mvpdemo.entity.UserEntity;
-import com.wyjson.mvpdemo.presenter.ITwoContract;
-import com.wyjson.mvpdemo.presenter.impl.TwoPresenter;
+import com.wyjson.mvpdemo.two.presenter.ITwoContract;
+import com.wyjson.mvpdemo.two.presenter.TwoPresenter;
 
 public class TwoActivity extends BasePActivity<TwoPresenter, ActivityTwoBinding> implements ITwoContract.IView {
 

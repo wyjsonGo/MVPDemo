@@ -1,7 +1,7 @@
-package com.wyjson.mvpdemo.presenter.impl;
+package com.wyjson.mvpdemo.two.presenter;
 
+import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.entity.UserEntity;
-import com.wyjson.mvpdemo.presenter.ITwoContract;
 import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
 /**
