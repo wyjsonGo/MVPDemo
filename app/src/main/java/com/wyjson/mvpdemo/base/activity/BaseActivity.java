@@ -42,4 +42,10 @@ public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActiv
             progressDialog.dismiss();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        hideLoading();
+    }
 }

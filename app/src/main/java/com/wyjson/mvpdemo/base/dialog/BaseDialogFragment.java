@@ -51,4 +51,9 @@ public abstract class BaseDialogFragment<VB extends ViewBinding> extends DialogF
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        hideLoading();
+    }
 }

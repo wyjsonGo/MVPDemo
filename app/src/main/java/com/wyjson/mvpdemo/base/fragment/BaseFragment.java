@@ -51,4 +51,9 @@ public abstract class BaseFragment<VB extends ViewBinding> extends Fragment impl
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        hideLoading();
+    }
 }
