@@ -18,7 +18,7 @@ import com.wyjson.mvpdemo.utils.ViewBindingHelper;
  * @version 1
  * @date 2021/9/22 11:53 AM
  */
-public abstract class BaseDialogFragment<VB extends ViewBinding> extends DialogFragment {
+public class BaseDialogFragment<VB extends ViewBinding> extends DialogFragment {
 
     protected VB vb;
 

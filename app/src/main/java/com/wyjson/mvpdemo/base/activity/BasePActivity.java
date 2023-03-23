@@ -15,7 +15,7 @@ import com.wyjson.mvpdemo.base.presenter.IBaseContract;
  * @version 1
  * @date 2021/9/22 3:47 PM
  */
-public abstract class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
+public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
 
     protected P mPresenter;
 

@@ -18,7 +18,7 @@ import com.wyjson.mvpdemo.utils.ViewBindingHelper;
  * @version 1
  * @date 2021/9/22 4:28 PM
  */
-public abstract class BaseFragment<VB extends ViewBinding> extends Fragment {
+public class BaseFragment<VB extends ViewBinding> extends Fragment {
 
     protected VB vb;
 

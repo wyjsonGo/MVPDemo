@@ -15,7 +15,7 @@ import com.wyjson.mvpdemo.base.presenter.IBaseContract;
  * @version 1
  * @date 2021/9/22 4:32 PM
  */
-public abstract class BasePFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseFragment<VB> implements IBaseContract.IBaseView {
+public class BasePFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 

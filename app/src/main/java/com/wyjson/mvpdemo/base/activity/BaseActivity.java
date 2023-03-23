@@ -14,7 +14,7 @@ import com.wyjson.mvpdemo.utils.ViewBindingHelper;
  * @version 1
  * @date 2021/9/22 11:53 AM
  */
-public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActivity {
+public class BaseActivity<VB extends ViewBinding> extends FragmentActivity {
 
     protected VB vb;
 
