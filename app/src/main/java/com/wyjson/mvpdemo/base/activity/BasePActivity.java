@@ -15,14 +15,14 @@ import com.wyjson.mvpdemo.base.presenter.IBaseContract;
  * @version 1
  * @date 2021/9/22 3:47 PM
  */
-public abstract class BasePActivity<P extends BasePresenter, VB extends ViewBinding> extends BaseActivity<VB> implements IBaseContract.IBaseView {
+public abstract class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
 
     protected P mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = BasePresenter.getT(this, 0);
+        mPresenter = BasePresenter.getT(this, 1);
         if (mPresenter != null) {
             mPresenter.onAttach(this, this);
         }

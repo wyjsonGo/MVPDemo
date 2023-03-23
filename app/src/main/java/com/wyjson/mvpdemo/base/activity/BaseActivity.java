@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
+import com.wyjson.mvpdemo.utils.ViewBindingHelper;
+
 /**
  * @author Wyjson
  * @version 1
@@ -16,12 +18,10 @@ public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActiv
 
     protected VB vb;
 
-    protected abstract VB setViewBinding();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        vb = setViewBinding();
+        vb = ViewBindingHelper.onCreateViewBinding(this, getLayoutInflater());
         if (vb != null) {
             setContentView(vb.getRoot());
         }

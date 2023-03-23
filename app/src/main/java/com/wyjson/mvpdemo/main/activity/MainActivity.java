@@ -13,12 +13,7 @@ import com.wyjson.mvpdemo.main.presenter.IMainContract;
 import com.wyjson.mvpdemo.main.presenter.MainPresenter;
 import com.wyjson.mvpdemo.two.activity.TwoActivity;
 
-public class MainActivity extends BasePActivity<MainPresenter, ActivityMainBinding> implements View.OnClickListener, IMainContract.IView {
-
-    @Override
-    public ActivityMainBinding setViewBinding() {
-        return ActivityMainBinding.inflate(getLayoutInflater());
-    }
+public class MainActivity extends BasePActivity<ActivityMainBinding, MainPresenter> implements View.OnClickListener, IMainContract.IView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

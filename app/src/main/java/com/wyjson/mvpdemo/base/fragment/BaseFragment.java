@@ -11,30 +11,34 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.base.presenter.IBaseContract;
+import com.wyjson.mvpdemo.utils.ViewBindingHelper;
 
 /**
  * @author Wyjson
  * @version 1
  * @date 2021/9/22 4:28 PM
  */
-public abstract class BaseFragment<VB extends ViewBinding> extends Fragment{
+public abstract class BaseFragment<VB extends ViewBinding> extends Fragment {
 
     protected VB vb;
-
-    protected abstract VB setViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container);
 
     protected View rootView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        vb = setViewBinding(inflater, container);
+        vb = ViewBindingHelper.onCreateViewBinding(this, inflater, container, false);
         if (vb != null) {
             return rootView = vb.getRoot();
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        vb = null;
     }
 
     ProgressDialog progressDialog;

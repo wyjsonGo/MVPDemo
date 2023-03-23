@@ -15,14 +15,14 @@ import com.wyjson.mvpdemo.base.presenter.IBaseContract;
  * @version 1
  * @date 2021/9/22 4:32 PM
  */
-public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBinding> extends BaseFragment<VB> implements IBaseContract.IBaseView {
+public abstract class BasePFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mPresenter = BasePresenter.getT(this, 0);
+        mPresenter = BasePresenter.getT(this, 1);
         if (mPresenter != null)
             mPresenter.onAttach(this, this);
     }

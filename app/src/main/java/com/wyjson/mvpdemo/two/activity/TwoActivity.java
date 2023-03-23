@@ -8,12 +8,7 @@ import com.wyjson.mvpdemo.entity.UserEntity;
 import com.wyjson.mvpdemo.two.presenter.ITwoContract;
 import com.wyjson.mvpdemo.two.presenter.TwoPresenter;
 
-public class TwoActivity extends BasePActivity<TwoPresenter, ActivityTwoBinding> implements ITwoContract.IView {
-
-    @Override
-    public ActivityTwoBinding setViewBinding() {
-        return ActivityTwoBinding.inflate(getLayoutInflater());
-    }
+public class TwoActivity extends BasePActivity<ActivityTwoBinding, TwoPresenter> implements ITwoContract.IView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
