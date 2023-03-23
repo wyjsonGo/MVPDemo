@@ -19,12 +19,10 @@ public abstract class BasePActivity<P extends BasePresenter, VB extends ViewBind
 
     protected P mPresenter;
 
-    protected abstract P setPresenter();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = setPresenter();
+        mPresenter = BasePresenter.getT(this, 0);
         if (mPresenter != null) {
             mPresenter.onAttach(this, this);
         }

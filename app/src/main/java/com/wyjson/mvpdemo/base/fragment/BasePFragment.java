@@ -19,12 +19,10 @@ public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBind
 
     public P mPresenter;
 
-    public abstract P getPresenter();
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mPresenter = getPresenter();
+        mPresenter = BasePresenter.getT(this, 0);
         if (mPresenter != null)
             mPresenter.onAttach(this, this);
     }

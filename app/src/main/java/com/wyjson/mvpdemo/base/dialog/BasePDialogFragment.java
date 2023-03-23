@@ -20,12 +20,10 @@ public abstract class BasePDialogFragment<P extends BasePresenter, VB extends Vi
 
     public P mPresenter;
 
-    public abstract P setPresenter();
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mPresenter = setPresenter();
+        mPresenter = BasePresenter.getT(this, 0);
         if (mPresenter != null)
             mPresenter.onAttach(this, this);
     }

@@ -11,11 +11,6 @@ import com.wyjson.mvpdemo.two.presenter.TwoPresenter;
 public class TwoActivity extends BasePActivity<TwoPresenter, ActivityTwoBinding> implements ITwoContract.IView {
 
     @Override
-    public TwoPresenter setPresenter() {
-        return new TwoPresenter();
-    }
-
-    @Override
     public ActivityTwoBinding setViewBinding() {
         return ActivityTwoBinding.inflate(getLayoutInflater());
     }
