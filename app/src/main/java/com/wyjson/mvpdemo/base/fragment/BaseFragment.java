@@ -18,7 +18,7 @@ import com.wyjson.mvpdemo.base.presenter.IBaseContract;
  * @version 1
  * @date 2021/9/22 4:28 PM
  */
-public abstract class BaseFragment<VB extends ViewBinding> extends Fragment implements IBaseContract.IBaseView {
+public abstract class BaseFragment<VB extends ViewBinding> extends Fragment{
 
     protected VB vb;
 
@@ -39,13 +39,11 @@ public abstract class BaseFragment<VB extends ViewBinding> extends Fragment impl
 
     ProgressDialog progressDialog;
 
-    @Override
-    public void showLoading() {
+    protected void showLoading() {
         progressDialog = ProgressDialog.show(getActivity(), null, "Loading...", false, false);
     }
 
-    @Override
-    public void hideLoading() {
+    protected void hideLoading() {
         if (progressDialog != null) {
             progressDialog.dismiss();
         }

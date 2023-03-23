@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.base.presenter.BasePresenter;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 
 
 /**
@@ -15,7 +16,7 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
  * @version 1
  * @date 2021/9/22 11:53 AM
  */
-public abstract class BasePDialogFragment<P extends BasePresenter, VB extends ViewBinding> extends BaseDialogFragment<VB> {
+public abstract class BasePDialogFragment<P extends BasePresenter, VB extends ViewBinding> extends BaseDialogFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 
@@ -36,6 +37,16 @@ public abstract class BasePDialogFragment<P extends BasePresenter, VB extends Vi
             mPresenter.onDetach();
             mPresenter = null;
         }
+    }
+
+    @Override
+    public void showLoading() {
+        super.showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        super.hideLoading();
     }
 }
 

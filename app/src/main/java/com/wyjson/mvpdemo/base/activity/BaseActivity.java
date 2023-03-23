@@ -7,14 +7,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.wyjson.mvpdemo.base.presenter.IBaseContract;
-
 /**
  * @author Wyjson
  * @version 1
  * @date 2021/9/22 11:53 AM
  */
-public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActivity implements IBaseContract.IBaseView {
+public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActivity {
 
     protected VB vb;
 
@@ -31,13 +29,11 @@ public abstract class BaseActivity<VB extends ViewBinding> extends FragmentActiv
 
     ProgressDialog progressDialog;
 
-    @Override
-    public void showLoading() {
+    protected void showLoading() {
         progressDialog = ProgressDialog.show(this, null, "Loading...", false, false);
     }
 
-    @Override
-    public void hideLoading() {
+    protected void hideLoading() {
         if (progressDialog != null) {
             progressDialog.dismiss();
         }

@@ -8,13 +8,14 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.base.presenter.BasePresenter;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 
 /**
  * @author Wyjson
  * @version 1
  * @date 2021/9/22 4:32 PM
  */
-public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBinding> extends BaseFragment<VB> {
+public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBinding> extends BaseFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 
@@ -35,6 +36,16 @@ public abstract class BasePFragment<P extends BasePresenter, VB extends ViewBind
             mPresenter.onDetach();
             mPresenter = null;
         }
+    }
+
+    @Override
+    public void showLoading() {
+        super.showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        super.hideLoading();
     }
 }
 
