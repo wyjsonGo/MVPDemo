@@ -12,14 +12,7 @@ import java.lang.reflect.ParameterizedType;
 public class ViewBindingHelper {
 
     public static <VB extends ViewBinding> VB onCreateViewBinding(Object o, LayoutInflater layoutInflater) {
-        try {
-            Class<VB> mVBClass = (Class<VB>) ((ParameterizedType) (o.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
-            Method method = mVBClass.getMethod("inflate", LayoutInflater.class);
-            return (VB) method.invoke(null, layoutInflater);
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return onCreateViewBinding(o, layoutInflater, null, false);
     }
 
     public static <VB extends ViewBinding> VB onCreateViewBinding(Object o, LayoutInflater layoutInflater, ViewGroup viewGroup, boolean attachToParent) {
