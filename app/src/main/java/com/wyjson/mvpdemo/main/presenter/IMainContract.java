@@ -11,7 +11,7 @@ import com.wyjson.mvpdemo.entity.UserEntity;
  */
 public interface IMainContract extends IBaseContract {
 
-    interface IPresenter<T> extends IBasePresenter<T> {
+    interface IPresenter<V> extends IBasePresenter<V> {
         void loadingDataApi(int page);
     }
 

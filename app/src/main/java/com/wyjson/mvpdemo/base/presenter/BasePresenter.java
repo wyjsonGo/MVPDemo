@@ -4,13 +4,13 @@ import androidx.lifecycle.LifecycleOwner;
 
 import java.lang.ref.WeakReference;
 
-public class BasePresenter<T extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<T> {
+public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<V> {
 
     protected LifecycleOwner lifecycleOwner;
-    private WeakReference<T> viewWeakReference;
+    private WeakReference<V> viewWeakReference;
 
     @Override
-    public void onAttach(LifecycleOwner lifecycleOwner, T view) {
+    public void onAttach(LifecycleOwner lifecycleOwner, V view) {
         this.lifecycleOwner = lifecycleOwner;
         viewWeakReference = new WeakReference<>(view);
     }
@@ -25,9 +25,9 @@ public class BasePresenter<T extends IBaseContract.IBaseView> implements IBaseCo
     }
 
     @Override
-    public T getView() {
+    public V getView() {
         if (viewWeakReference != null) {
-            T mView = viewWeakReference.get();
+            V mView = viewWeakReference.get();
             if (mView != null)
                 return mView;
         }

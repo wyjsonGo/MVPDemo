@@ -11,7 +11,7 @@ import com.wyjson.mvpdemo.entity.UserEntity;
  */
 public interface ITwoContract extends IBaseContract {
 
-    interface IPresenter<T> extends IBasePresenter<T> {
+    interface IPresenter<V> extends IBasePresenter<V> {
         void findApi1(int page);
 
         void findApi2(int page);

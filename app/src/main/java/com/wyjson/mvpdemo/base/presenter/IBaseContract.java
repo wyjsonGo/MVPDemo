@@ -9,12 +9,12 @@ import androidx.lifecycle.LifecycleOwner;
  */
 public interface IBaseContract {
 
-    interface IBasePresenter<T> {
-        void onAttach(LifecycleOwner lifecycleOwner, T view);
+    interface IBasePresenter<V> {
+        void onAttach(LifecycleOwner lifecycleOwner, V view);
 
         void onDetach();
 
-        T getView();
+        V getView();
     }
 
     interface IBaseView {
