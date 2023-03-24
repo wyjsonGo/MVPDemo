@@ -5,10 +5,10 @@ import android.os.Bundle;
 import com.wyjson.mvpdemo.base.activity.BasePActivity;
 import com.wyjson.mvpdemo.databinding.ActivityTwoBinding;
 import com.wyjson.mvpdemo.entity.UserEntity;
-import com.wyjson.mvpdemo.two.presenter.ITwoContract;
+import com.wyjson.mvpdemo.two.presenter.TwoContract;
 import com.wyjson.mvpdemo.two.presenter.TwoPresenter;
 
-public class TwoActivity extends BasePActivity<ActivityTwoBinding, TwoPresenter> implements ITwoContract.IView {
+public class TwoActivity extends BasePActivity<ActivityTwoBinding, TwoPresenter> implements TwoContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +18,12 @@ public class TwoActivity extends BasePActivity<ActivityTwoBinding, TwoPresenter>
     }
 
     @Override
-    public void findApiSuccess(UserEntity userEntity) {
+    public void onFindApiSuc(UserEntity userEntity) {
         vb.tvTest.setText("Success! ->" + userEntity.toString());
     }
 
     @Override
-    public void findApiFailed(int statusCode) {
+    public void onFindApiFail(int statusCode) {
         vb.tvTest.setText("Failed!");
     }
 }

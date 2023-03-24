@@ -6,19 +6,19 @@ import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
 import java.util.Random;
 
-public class MainPresenter extends BasePresenter<IMainContract.IView> implements IMainContract.IPresenter<IMainContract.IView> {
+public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter<MainContract.View> {
 
     @Override
-    public void loadingDataApi(int page) {
+    public void loadingData(int page) {
         getView().showLoading();
         new OkHttpUtils().enqueue(getLifecycleOwner(), 1, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
                 getView().hideLoading();
                 if (new Random().nextBoolean()) {
-                    getView().loadingDataApiSuccess(new UserEntity(25, "Wyjson"));
+                    getView().onLoadingDataSuc(new UserEntity(25, "Wyjson"));
                 } else {
-                    getView().loadingDataApiFailed(500);
+                    getView().onLoadingDataFail(500);
                 }
 
             }

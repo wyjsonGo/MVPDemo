@@ -2,9 +2,9 @@ package com.wyjson.mvpdemo.base.presenter;
 
 import androidx.lifecycle.LifecycleOwner;
 
-public interface IBaseContract {
+public interface BaseContract {
 
-    interface IBasePresenter<V> {
+    interface BasePresenter<V> {
         void onAttach(LifecycleOwner lifecycleOwner, V view);
 
         void onDetach();
@@ -12,7 +12,7 @@ public interface IBaseContract {
         V getView();
     }
 
-    interface IBaseView {
+    interface BaseView {
         void showLoading();
 
         void hideLoading();

@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<V> {
+public class BasePresenter<V extends BaseContract.BaseView> implements BaseContract.BasePresenter<V> {
 
     private LifecycleOwner lifecycleOwner;
     private Reference<V> viewReference;

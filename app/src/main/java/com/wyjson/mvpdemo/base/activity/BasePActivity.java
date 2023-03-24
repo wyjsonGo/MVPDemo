@@ -6,10 +6,10 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.base.presenter.BasePresenter;
-import com.wyjson.mvpdemo.base.presenter.IBaseContract;
+import com.wyjson.mvpdemo.base.presenter.BaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
+public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements BaseContract.BaseView {
 
     protected P mPresenter;
 
