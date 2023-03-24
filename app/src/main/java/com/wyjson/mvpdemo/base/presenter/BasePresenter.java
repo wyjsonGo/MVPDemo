@@ -6,7 +6,6 @@ import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Proxy;
 
 public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<V> {
@@ -47,15 +46,6 @@ public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseCo
 
     public LifecycleOwner getLifecycleOwner() {
         return lifecycleOwner;
-    }
-
-    public static <T> T getT(Object o, int i) {
-        try {
-            return ((Class<T>) ((ParameterizedType) (o.getClass().getGenericSuperclass())).getActualTypeArguments()[i]).newInstance();
-        } catch (IllegalAccessException | InstantiationException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 }

@@ -9,6 +9,7 @@ import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.base.presenter.IBaseContract;
+import com.wyjson.mvpdemo.utils.PresenterHelper;
 
 
 /**
@@ -23,7 +24,7 @@ public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mPresenter = BasePresenter.getT(this, 1);
+        mPresenter = PresenterHelper.getT(this, 1);
         if (mPresenter != null)
             mPresenter.onAttach(this, this);
     }
