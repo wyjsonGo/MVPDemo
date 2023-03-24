@@ -2,33 +2,34 @@ package com.wyjson.mvpdemo.base.presenter;
 
 import androidx.lifecycle.LifecycleOwner;
 
-import java.lang.ref.WeakReference;
+import java.lang.ref.Reference;
+import java.lang.ref.SoftReference;
 import java.lang.reflect.ParameterizedType;
 
 public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<V> {
 
     protected LifecycleOwner lifecycleOwner;
-    private WeakReference<V> viewWeakReference;
+    private Reference<V> viewReference;
 
     @Override
     public void onAttach(LifecycleOwner lifecycleOwner, V view) {
         this.lifecycleOwner = lifecycleOwner;
-        viewWeakReference = new WeakReference<>(view);
+        viewReference = new SoftReference<>(view);
     }
 
     @Override
     public void onDetach() {
         lifecycleOwner = null;
-        if (viewWeakReference != null && viewWeakReference.get() != null) {
-            viewWeakReference.clear();
-            viewWeakReference = null;
+        if (viewReference != null && viewReference.get() != null) {
+            viewReference.clear();
+            viewReference = null;
         }
     }
 
     @Override
     public V getView() {
-        if (viewWeakReference != null) {
-            V mView = viewWeakReference.get();
+        if (viewReference != null) {
+            V mView = viewReference.get();
             if (mView != null)
                 return mView;
         }
