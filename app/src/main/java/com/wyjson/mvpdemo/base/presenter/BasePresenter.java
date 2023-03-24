@@ -4,17 +4,31 @@ import androidx.lifecycle.LifecycleOwner;
 
 import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Proxy;
 
 public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseContract.IBasePresenter<V> {
 
-    protected LifecycleOwner lifecycleOwner;
+    private LifecycleOwner lifecycleOwner;
     private Reference<V> viewReference;
+    protected V mView;
 
     @Override
     public void onAttach(LifecycleOwner lifecycleOwner, V view) {
         this.lifecycleOwner = lifecycleOwner;
         viewReference = new SoftReference<>(view);
+        // 动态代理解决在presenter里需要多处判断view==null的情况.
+        this.mView = (V) Proxy.newProxyInstance(view.getClass().getClassLoader(), view.getClass().getInterfaces(), new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                if (viewReference == null || viewReference.get() == null) {
+                    return null;
+                }
+                return method.invoke(viewReference.get(), args);
+            }
+        });
     }
 
     @Override
@@ -28,12 +42,11 @@ public class BasePresenter<V extends IBaseContract.IBaseView> implements IBaseCo
 
     @Override
     public V getView() {
-        if (viewReference != null) {
-            V mView = viewReference.get();
-            if (mView != null)
-                return mView;
-        }
-        return null;
+        return mView;
+    }
+
+    public LifecycleOwner getLifecycleOwner() {
+        return lifecycleOwner;
     }
 
     public static <T> T getT(Object o, int i) {

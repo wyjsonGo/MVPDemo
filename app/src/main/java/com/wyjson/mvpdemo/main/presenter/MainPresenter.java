@@ -16,7 +16,7 @@ public class MainPresenter extends BasePresenter<IMainContract.IView> implements
     @Override
     public void loadingDataApi(int page) {
         getView().showLoading();
-        new OkHttpUtils().enqueue(lifecycleOwner, 1, new OkHttpUtils.MyCallback() {
+        new OkHttpUtils().enqueue(getLifecycleOwner(), 1, new OkHttpUtils.MyCallback() {
             @Override
             public void onSuccess() {
                 getView().hideLoading();
