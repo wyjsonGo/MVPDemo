@@ -6,11 +6,6 @@ import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
 import java.util.Random;
 
-/**
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 2:21 PM
- */
 public class MainPresenter extends BasePresenter<IMainContract.IView> implements IMainContract.IPresenter<IMainContract.IView> {
 
     @Override

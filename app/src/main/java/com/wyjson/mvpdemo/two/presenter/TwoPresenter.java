@@ -4,11 +4,6 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.entity.UserEntity;
 import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
-/**
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 2:21 PM
- */
 public class TwoPresenter extends BasePresenter<ITwoContract.IView> implements ITwoContract.IPresenter<ITwoContract.IView> {
 
     @Override

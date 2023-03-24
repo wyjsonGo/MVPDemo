@@ -13,11 +13,6 @@ import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.utils.ViewBindingHelper;
 
-/**
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 4:28 PM
- */
 public class BaseFragment<VB extends ViewBinding> extends Fragment {
 
     protected VB vb;

@@ -8,11 +8,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-/**
- * @author Wyjson
- * @version 1
- * @date 2022/1/19 1:40 PM
- */
 public class OkHttpUtils {
 
     public interface MyCallback {

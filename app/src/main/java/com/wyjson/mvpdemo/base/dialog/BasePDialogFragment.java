@@ -11,12 +11,6 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-
-/**
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 11:53 AM
- */
 public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseDialogFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;

@@ -9,13 +9,6 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-/**
- * Presenter
- *
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 3:47 PM
- */
 public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
 
     protected P mPresenter;

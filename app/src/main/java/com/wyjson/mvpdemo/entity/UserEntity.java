@@ -2,11 +2,6 @@ package com.wyjson.mvpdemo.entity;
 
 import java.io.Serializable;
 
-/**
- * @author Wyjson
- * @version 1
- * @date 2021/9/22 2:55 PM
- */
 public class UserEntity implements Serializable {
 
     private long id;
