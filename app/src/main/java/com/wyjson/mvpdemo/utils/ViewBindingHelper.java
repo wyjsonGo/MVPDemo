@@ -20,7 +20,7 @@ public class ViewBindingHelper {
             Class<VB> mVBClass = (Class<VB>) ((ParameterizedType) (o.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
             Method method = mVBClass.getMethod("inflate", LayoutInflater.class, ViewGroup.class, boolean.class);
             return (VB) method.invoke(null, layoutInflater, viewGroup, attachToParent);
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | ClassCastException e) {
             e.printStackTrace();
         }
         return null;
