@@ -31,7 +31,7 @@
         android:id="@+id/btn_void"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_test"
+        android:layout_below="@id/btn_open"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:onClick="onClick"
