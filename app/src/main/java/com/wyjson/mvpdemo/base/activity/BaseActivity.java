@@ -22,9 +22,11 @@ public class BaseActivity<VB extends ViewBinding> extends FragmentActivity {
         }
     }
 
-    ProgressDialog progressDialog;
+    protected ProgressDialog progressDialog;
 
     protected void showLoading() {
+        if (progressDialog != null && progressDialog.isShowing())
+            hideLoading();
         progressDialog = ProgressDialog.show(this, null, "Loading...", false, false);
     }
 
@@ -36,7 +38,7 @@ public class BaseActivity<VB extends ViewBinding> extends FragmentActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         hideLoading();
+        super.onDestroy();
     }
 }

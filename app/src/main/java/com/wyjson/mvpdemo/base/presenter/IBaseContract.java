@@ -2,17 +2,19 @@ package com.wyjson.mvpdemo.base.presenter;
 
 import androidx.lifecycle.LifecycleOwner;
 
-public interface BaseContract {
+public interface IBaseContract {
 
-    interface BasePresenter<V> {
-        void onAttach(LifecycleOwner lifecycleOwner, V view);
+    interface IBasePresenter<V> {
+        void onAttach(LifecycleOwner lo, V view);
 
         void onDetach();
 
         V getView();
+
+        LifecycleOwner getLifecycleOwner();
     }
 
-    interface BaseView {
+    interface IBaseView {
         void showLoading();
 
         void hideLoading();

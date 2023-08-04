@@ -6,7 +6,7 @@ import com.wyjson.mvpdemo.utils.OkHttpUtils;
 
 import java.util.Random;
 
-public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter<MainContract.View> {
+public class MainPresenter extends BasePresenter<MainContract.IView> implements MainContract.IPresenter<MainContract.IView> {
 
     @Override
     public void loadingData(int page) {
@@ -20,7 +20,6 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                 } else {
                     getView().onLoadingDataFail(500);
                 }
-
             }
         });
     }

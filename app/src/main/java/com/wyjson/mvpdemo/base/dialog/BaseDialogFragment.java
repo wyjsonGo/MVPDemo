@@ -30,15 +30,11 @@ public class BaseDialogFragment<VB extends ViewBinding> extends DialogFragment {
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        vb = null;
-    }
-
-    ProgressDialog progressDialog;
+    protected ProgressDialog progressDialog;
 
     protected void showLoading() {
+        if (progressDialog != null && progressDialog.isShowing())
+            hideLoading();
         progressDialog = ProgressDialog.show(getActivity(), null, "Loading...", false, false);
     }
 
@@ -49,8 +45,8 @@ public class BaseDialogFragment<VB extends ViewBinding> extends DialogFragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
         hideLoading();
+        super.onDestroyView();
     }
 }

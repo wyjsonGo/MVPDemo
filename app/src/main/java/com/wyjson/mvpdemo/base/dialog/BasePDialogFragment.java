@@ -8,10 +8,10 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.base.presenter.BasePresenter;
-import com.wyjson.mvpdemo.base.presenter.BaseContract;
+import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseDialogFragment<VB> implements BaseContract.BaseView {
+public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseDialogFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 
