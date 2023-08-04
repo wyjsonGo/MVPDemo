@@ -9,7 +9,7 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
+abstract class BasePActivity<VB extends ViewBinding, P extends BasePresenter> extends BaseActivity<VB> implements IBaseContract.IBaseView {
 
     protected P mPresenter;
 
@@ -17,9 +17,8 @@ public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> exte
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = PresenterHelper.getT(this, 1);
-        if (mPresenter != null) {
+        if (mPresenter != null)
             mPresenter.onAttach(this, this);
-        }
     }
 
     @Override
@@ -29,15 +28,5 @@ public class BasePActivity<VB extends ViewBinding, P extends BasePresenter> exte
             mPresenter.onDetach();
             mPresenter = null;
         }
-    }
-
-    @Override
-    public void showLoading() {
-        super.showLoading();
-    }
-
-    @Override
-    public void hideLoading() {
-        super.hideLoading();
     }
 }

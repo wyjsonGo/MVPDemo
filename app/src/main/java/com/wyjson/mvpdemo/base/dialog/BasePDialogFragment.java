@@ -11,7 +11,7 @@ import com.wyjson.mvpdemo.base.presenter.BasePresenter;
 import com.wyjson.mvpdemo.base.presenter.IBaseContract;
 import com.wyjson.mvpdemo.utils.PresenterHelper;
 
-public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseDialogFragment<VB> implements IBaseContract.IBaseView {
+abstract class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter> extends BaseDialogFragment<VB> implements IBaseContract.IBaseView {
 
     public P mPresenter;
 
@@ -30,16 +30,6 @@ public class BasePDialogFragment<VB extends ViewBinding, P extends BasePresenter
             mPresenter.onDetach();
             mPresenter = null;
         }
-    }
-
-    @Override
-    public void showLoading() {
-        super.showLoading();
-    }
-
-    @Override
-    public void hideLoading() {
-        super.hideLoading();
     }
 }
 

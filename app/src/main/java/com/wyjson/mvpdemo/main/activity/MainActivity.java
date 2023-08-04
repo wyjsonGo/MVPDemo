@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.view.View;
 
 import com.wyjson.mvpdemo.R;
-import com.wyjson.mvpdemo.base.activity.BasePActivity;
+import com.wyjson.mvpdemo.base.activity.BaseMyActivity;
 import com.wyjson.mvpdemo.databinding.ActivityMainBinding;
 import com.wyjson.mvpdemo.entity.UserEntity;
 import com.wyjson.mvpdemo.main.presenter.MainContract;
 import com.wyjson.mvpdemo.main.presenter.MainPresenter;
 import com.wyjson.mvpdemo.two.activity.TwoActivity;
+import com.wyjson.mvpdemo.voids.activity.VoidActivity;
 
-public class MainActivity extends BasePActivity<ActivityMainBinding, MainPresenter> implements View.OnClickListener, MainContract.IView {
+public class MainActivity extends BaseMyActivity<ActivityMainBinding, MainPresenter> implements View.OnClickListener, MainContract.IView {
 
     @Override
     public void onClick(View v) {
@@ -19,6 +20,8 @@ public class MainActivity extends BasePActivity<ActivityMainBinding, MainPresent
             mPresenter.loadingData(1);
         } else if (v.getId() == R.id.btn_open) {
             startActivity(new Intent(this, TwoActivity.class));
+        } else if (v.getId() == R.id.btn_void) {
+            startActivity(new Intent(this, VoidActivity.class));
         }
     }
 

@@ -1,6 +1,5 @@
 package com.wyjson.mvpdemo.base.fragment;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 
 import com.wyjson.mvpdemo.utils.ViewBindingHelper;
 
-public class BaseFragment<VB extends ViewBinding> extends Fragment {
+class BaseFragment<VB extends ViewBinding> extends Fragment {
 
     protected VB vb;
 
@@ -30,23 +29,4 @@ public class BaseFragment<VB extends ViewBinding> extends Fragment {
         }
     }
 
-    protected ProgressDialog progressDialog;
-
-    protected void showLoading() {
-        if (progressDialog != null && progressDialog.isShowing())
-            hideLoading();
-        progressDialog = ProgressDialog.show(getActivity(), null, "Loading...", false, false);
-    }
-
-    protected void hideLoading() {
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-        }
-    }
-
-    @Override
-    public void onDestroyView() {
-        hideLoading();
-        super.onDestroyView();
-    }
 }
