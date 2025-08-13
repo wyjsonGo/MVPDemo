@@ -77,8 +77,10 @@
 
 
 # #   ########## ViewBindingHelper # start ##########
--keepclassmembers class * implements androidx.viewbinding.ViewBinding {
-  public static * inflate(android.view.LayoutInflater, android.view.ViewGroup, boolean);
+# 保留所有实现了 ViewBinding 接口的类（类名不会被混淆）
+-keep class * implements androidx.viewbinding.ViewBinding {
+    # 保留这些类中的静态 inflate 方法，防止被混淆或删除
+    public static * inflate(android.view.LayoutInflater, android.view.ViewGroup, boolean);
 }
 # #   ########## ViewBindingHelper # end ##########
 
