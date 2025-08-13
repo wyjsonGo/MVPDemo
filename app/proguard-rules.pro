@@ -83,6 +83,15 @@
 # #   ########## ViewBindingHelper # end ##########
 
 
+# #   ########## MVP # start ##########
+# 保留实现了 IBasePresenter 接口的所有类（仅保留类名，不保留成员）
+-keep class * implements com.wyjson.module_base.presenter.IBaseContract$IBasePresenter
+
+# 保留实现了 IBaseView 接口的所有类（仅保留类名，不保留成员）
+-keep class * implements com.wyjson.module_base.presenter.IBaseContract$IBaseView
+# #   ########## MVP # end ##########
+
+
 
 
 
